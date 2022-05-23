@@ -49,5 +49,20 @@ jobs:
       #   run: |
       #     cd ./Terraform/Lab4_Pipeline_CI_CD_Terraform
       #     terraform apply -auto-approve -lock=false "monplan.tfplan"
-    
+  Apply Terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checks-out du repository
+        uses: actions/checkout@v2
+
+      - name: Download artifact
+          uses: actions/download-artifact@v3
+          with:
+            name: tgr_plan.tfplan
+
+      - name: Terraform Apply
+        run: |
+          cd ./Terraform/Lab4_Pipeline_CI_CD_Terraform
+          terraform apply -auto-approve -lock=false "tgr_plan.tfplan"
 
