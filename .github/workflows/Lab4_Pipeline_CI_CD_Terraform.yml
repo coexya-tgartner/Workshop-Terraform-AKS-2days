@@ -44,7 +44,8 @@ jobs:
           name: tgr_plan.tfplan
           path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/monplan.tfplan     
          
-  Apply-Terraform:
+  Build-Terraform:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: Checks-out du repository
