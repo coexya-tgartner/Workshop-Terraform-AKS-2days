@@ -67,10 +67,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: tgr_plan.tfplan
-          path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/
+          path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform
 
       - name: Terraform Apply
         run: |
           cd ./Terraform/Lab4_Pipeline_CI_CD_Terraform
-          terraform apply -auto-approve -lock=false "tgr_plan.tfplan"
+          terraform apply -auto-approve -lock=false "monplan.tfplan"
 
