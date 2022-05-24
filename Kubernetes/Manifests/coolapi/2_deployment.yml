@@ -18,3 +18,15 @@ spec:
           image: "tgracr2022.azurecr.io/tgrcoolapi:1.0.0"
           ports:
           - containerPort: 3000
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+          limits:
+            cpu: "1"
+            memory: "200Mi"
+          requests:
+            cpu: "0.5"
+            memory: "100Mi"
