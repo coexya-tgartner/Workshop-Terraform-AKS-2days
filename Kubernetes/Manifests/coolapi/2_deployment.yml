@@ -1,20 +1,20 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: "coolapi-deployment"
-  namespace: coolapi
+  name: "tgrcoolapi-deployment"
+  namespace: tgrcoolapi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "coolapi"
+      app: "tgrcoolapi"
   template:
     metadata:
       labels:
-        app: "coolapi"
+        app: "tgrcoolapi"
     spec:
       containers:
-        - name: "coolapi"
-          image: "acrpierrc007.azurecr.io/coolapi:1.0.0"
+        - name: "tgrcoolapi"
+          image: "tgracr2022.azurecr.io/tgrcoolapi:1.0.0"
           ports:
           - containerPort: 3000
